@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Quicksand:wght@300..700&display=swap');
+@import "tailwindcss" theme(static);
+@import "@nuxt/ui";
+
+
+.divisor{
+    height: 1px;
+    width: 100%;
+    background: repeating-linear-gradient(90deg,#263238,#263238 4px,transparent 4px,transparent 10px);
+}
+
+
+.main-content{
+    width: 92%;
+    border-left: 1px solid #263238;
+    border-right: 1px solid #263238;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .main-content{
+        width: 99%;
+        border-left: 1px solid #263238;
+        border-right: 1px solid #263238;
+    }
+}
+
+body{
+    background-color: white;
+    padding: 0;
+    
+}
