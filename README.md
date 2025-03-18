@@ -9,10 +9,7 @@ This project includes a **frontend** built with **Nuxt 3** and **Vue.js** and a 
 
 You can watch the demo of the project below:
 
-<video width="100%" controls>
-  <source src="https://neon-stack-storage.fra1.cdn.digitaloceanspaces.com/artleaf_launch.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<video src="https://github.com/rayytsn9/ROBOTT/assets/79029536/62f541aa-aa8c-43f5-9ead-4b7a2e0d7c2a" width="300" />
 
 ## Requirements
 
