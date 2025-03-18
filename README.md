@@ -5,11 +5,6 @@
 This project includes a **frontend** built with **Nuxt 3** and **Vue.js** and a **backend** built with **Python** and **FastAPI**. The frontend communicates with the backend to generate AI-based images using reference images and user prompts.
 
 
-## Watch the Demo
-
-You can watch the demo of the project below:
-
-<video src="https://github.com/rayytsn9/ROBOTT/assets/79029536/62f541aa-aa8c-43f5-9ead-4b7a2e0d7c2a" width="300" />
 
 ## Requirements
 
@@ -56,5 +51,4 @@ You can watch the demo of the project below:
 - The backend processes the reference image and prompt, combining them to create a high-quality image generation prompt.
 - The backend then returns the prompt to client.
 
-## Folder Structure
 
