@@ -1,4 +1,4 @@
-# Project Name
+# Reference guided AI image generation
 
 ## Overview
 
