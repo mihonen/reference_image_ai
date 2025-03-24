@@ -90,6 +90,7 @@ const addReference = () => {
     annotationDescription: "",
     isLoading: false,
     resultPrompt: null,
+    customAnnotation: "",
   });
 };
 
@@ -100,7 +101,7 @@ const removeReference = (id) => {
 const analyzeReference = async (id) => {
   const reference = references.value.find(ref => ref.id === id);
 
-  if (!reference.imageFile || !reference.annotation || !reference.annotationDescription) {
+  if (!reference.imageFile || !reference.annotation) {
     alert("Please complete all fields!");
     return;
   }
@@ -109,8 +110,14 @@ const analyzeReference = async (id) => {
 
   const formData = new FormData();
   formData.append("image", reference.imageFile);
-  formData.append("annotation", reference.annotation);
-  formData.append("annotationDetail", reference.annotationDescription);
+  if (reference.annotation === "Customized"){
+    formData.append("annotation", reference.customAnnotation);
+  }
+  else{
+    formData.append("annotation", reference.annotation);
+  }
+
+  formData.append("annotationDetail", reference.annotationDescription ?? "");
 
 
   try {
@@ -195,6 +202,7 @@ const analyzeReference = async (id) => {
           <template v-for="reference in references" :key="reference.id">
             <PromptBox 
               v-if="reference && reference.resultPrompt" 
+              :title="reference.annotation"
               :content="reference.resultPrompt" 
               color="teal" 
               class="w-full my-4"

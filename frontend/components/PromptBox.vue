@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-const props = defineProps(['color', 'content'])
+const props = defineProps(['title', 'color', 'content'])
 
 
 </script>
@@ -14,7 +14,7 @@ const props = defineProps(['color', 'content'])
       color === 'cyan' && 'border-cyan-300 bg-cyan-300/20 text-cyan-600'
     ]"
   >
-    <p class="my-4 font-bold">Style</p>
+    <p class="my-4 font-bold">{{title ?? "Result"}}</p>
     <p class="text-black mb-4">
         {{content}}
     </p>

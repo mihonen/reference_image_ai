@@ -27,7 +27,7 @@ const handleImageUpload = (event) => {
 
 
 <template>
-    <div class="border border-neutral-300 rounded-lg p-4">
+    <div class="border border-neutral-300 rounded-lg p-4 ">
             
         <div 
           class="bg-neutral-100 rounded-lg flex justify-center items-center cursor-pointer hover:bg-neutral-300 overflow-hidden relative" 
@@ -52,24 +52,36 @@ const handleImageUpload = (event) => {
             What aspect are you referencing?
         </p>
 
-        <USelect v-model="reference.annotation" :items="['Style', 'Color', 'Vibe', 'Object']" class="w-full rounded-lg border border-neutral-300 my-4 px-4 py-2 flex flex-row items-center bg-white text-black hover:bg-neutral-100" />
+        <USelect v-model="reference.annotation" :items="['Subject', 'Background', 'Style', 'Vibe', 'Lighting', 'View', 'Material', 'Customized']" class="w-full rounded-lg  my-4 px-4 py-2 flex flex-row items-center bg-white text-black cursor-pointer hover:bg-neutral-200" />
 
+
+        <div 
+          class="w-full overflow-hidden" 
+          :class="reference.annotation === 'Customized' ? 'h-auto' : 'h-0'"
+        >
+          <textarea 
+            v-model="reference.customAnnotation" 
+            rows=1
+            placeholder="Custom annotation" 
+            class="w-full text-sm border border-neutral-800 rounded-lg text-black px-4 py-2 resize-none">
+          </textarea> 
+        </div>
 
 
         <div class="w-full">
           <p class="text-black my-4">Annotation Details</p>
           <textarea 
           v-model="reference.annotationDescription" 
-          placeholder="Add your annotation" class="w-full border border-neutral-300 rounded-lg text-black px-4 py-2 resize-none"></textarea> 
+          placeholder="Add your annotation" class="w-full border border-neutral-800 rounded-lg text-black px-4 py-2 resize-none"></textarea> 
         </div>
 
 
-        <div class="w-full rounded-lg border border-neutral-300 my-4 p-2 flex flex-row items-center justify-between cursor-pointer bg-red-400 hover:bg-neutral-100" @click="emit('remove', reference.id)">
+        <div class="w-full rounded-lg border border-neutral-800 my-4 p-2 flex flex-row items-center justify-between cursor-pointer bg-red-400 hover:bg-red-200" @click="emit('remove', reference.id)">
           <p class="text-black text-center w-full">Delete</p>
         </div>
 
 
-        <div class="relative overflow-hidden w-full rounded-lg border border-neutral-300 mt-4 p-2 flex flex-row items-center justify-between cursor-pointer bg-blue-400 hover:bg-neutral-100" @click="emit('analyze', reference.id)">
+        <div class="relative overflow-hidden w-full rounded-lg border border-neutral-800 mt-4 p-2 flex flex-row items-center justify-between cursor-pointer bg-blue-400 hover:bg-blue-200" @click="emit('analyze', reference.id)">
 
 
             <p class="text-black text-center w-full">
