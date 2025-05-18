@@ -14,6 +14,8 @@ origins = [
     "http://localhost",  # Allow frontend to connect
     "http://127.0.0.1",  # Allow frontend to connect
     "http://localhost:3000",  # Or the port your frontend runs on
+    "http://localhost:3001",  # Or the port your frontend runs on
+
 ]
 
 # Add the middleware to the app to handle CORS
@@ -38,7 +40,6 @@ async def generate_image(
     annotation: str = Form(...),
     annotationDetail: str = Form(...)
 ):
-
 
     image_data = await image.read()
     base64_image = base64.b64encode(image_data).decode("utf-8") 

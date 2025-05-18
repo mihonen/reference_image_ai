@@ -52,7 +52,7 @@ const handleImageUpload = (event) => {
             What aspect are you referencing?
         </p>
 
-        <USelect v-model="reference.annotation" :items="['Subject', 'Background', 'Style', 'Vibe', 'Lighting', 'View', 'Material', 'Customized']" class="w-full rounded-lg  my-4 px-4 py-2 flex flex-row items-center bg-white text-black cursor-pointer hover:bg-neutral-200" />
+        <USelect v-model="reference.annotation" :items="['Subject', 'Background', 'Style', 'Lighting', 'View', 'Material', 'Customized']" class="w-full rounded-lg  my-4 px-4 py-2 flex flex-row items-center bg-white text-black cursor-pointer hover:bg-neutral-200" />
 
 
         <div 
@@ -62,7 +62,7 @@ const handleImageUpload = (event) => {
           <textarea 
             v-model="reference.customAnnotation" 
             rows=1
-            placeholder="Custom annotation" 
+            placeholder="What you want to extract?" 
             class="w-full text-sm border border-neutral-800 rounded-lg text-black px-4 py-2 resize-none">
           </textarea> 
         </div>
@@ -72,7 +72,7 @@ const handleImageUpload = (event) => {
           <p class="text-black my-4">Annotation Details</p>
           <textarea 
           v-model="reference.annotationDescription" 
-          placeholder="Add your annotation" class="w-full border border-neutral-800 rounded-lg text-black px-4 py-2 resize-none"></textarea> 
+          placeholder="Optional details" class="w-full border border-neutral-800 rounded-lg text-black px-4 py-2 resize-none"></textarea> 
         </div>
 
 

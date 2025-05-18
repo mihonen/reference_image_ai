@@ -203,7 +203,7 @@ const analyzeReference = async (id) => {
             <PromptBox 
               v-if="reference && reference.resultPrompt" 
               :title="reference.annotation"
-              :content="reference.resultPrompt" 
+              v-model:content="reference.resultPrompt" 
               color="teal" 
               class="w-full my-4"
             />
@@ -217,30 +217,6 @@ const analyzeReference = async (id) => {
             <PromptBox color="orange" v-if="generatedPrompt" :content="generatedPrompt" class="w-full"/>
 
           </div>
-
-          <!-- 
-          <div class="w-full my-8">
-            <p class="text-black my-4">2. What you want to replicate?</p>
-            <textarea
-              v-model="replicateText"
-              placeholder="Write description"
-              class="w-full h-32 border border-black rounded-lg text-black p-4"
-            ></textarea>
-          </div>
-
-          <div class="w-full my-8">
-            <p class="text-black my-4">3. What you want to add?</p>
-            <textarea
-              v-model="addText"
-              placeholder="Write description"
-              class="w-full h-32 border border-black rounded-lg text-black p-4"
-            ></textarea>
-          </div>
-
-
-
- -->
-         
 
 
         </div>
